@@ -2,15 +2,16 @@
 // Global configuration for the college portfolio
 
 export const siteConfig = {
-  name: "SCISA College",
-  description: "Official portfolio website showcasing our departments, news, executives, and achievements.",
+  name: "College of Science",
+  college: "KNUST",
+  description: "The College of Science at KNUST - Ghana's premier institution for scientific excellence, innovation, and discovery.",
   url: "https://scisa-college.edu", // Update with actual domain
   
   // Contact Information
   contact: {
-    email: "info@scisa-college.edu",
-    phone: "+1 (555) 123-4567",
-    address: "123 College Street, Education City, EC 12345"
+    email: "admin@knust.edu.gh",
+    phone: "+233 XXX XXX XXX",
+    address: "KNUST, Kumasi, Ghana"
   },
   
   // Social Media Links
@@ -23,9 +24,9 @@ export const siteConfig = {
   
   // SEO Defaults
   seo: {
-    defaultTitle: "SCISA College - Excellence in Education",
-    titleTemplate: "%s | SCISA College",
-    defaultDescription: "Discover academic excellence at SCISA College. Explore our departments, latest news, and meet our executive team.",
-    keywords: ["college", "education", "university", "academic", "departments", "students"]
+    defaultTitle: "College of Science at KNUST",
+    titleTemplate: "%s | College of Science at KNUST",
+    defaultDescription: "The College of Science at KNUST is Ghana's premier institution for scientific excellence, innovation, and discovery.",
+    keywords: ["college", "science", "KNUST", "Ghana", "university", "academic", "departments", "students"]
   }
 } as const;
