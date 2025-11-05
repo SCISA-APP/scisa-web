@@ -47,7 +47,7 @@ export function truncate(text: string, length: number): string {
  */
 export function titleCase(text: string): string {
   return text.replace(/\w\S*/g, (txt) => 
-    txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
   );
 }
 

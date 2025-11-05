@@ -1,4 +1,5 @@
 import { cn } from '../../lib/utils';
+import { Link } from 'react-router-dom';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ export const Button = ({
   href,
   type = 'button'
 }: ButtonProps) => {
-  const baseClasses = "inline-flex items-center gap-2 px-6 py-3 text-sm font-medium font-sans rounded-md cursor-pointer transition-all border";
+  const baseClasses = "inline-flex items-center gap-2 px-6 py-3 text-sm font-medium font-sans rounded-none cursor-pointer transition-all border";
   
   const variantClasses = {
     primary: "bg-primary text-white border-primary hover:bg-red-800 hover:border-red-800",
@@ -27,6 +28,10 @@ export const Button = ({
   };
 
   const buttonClass = cn(baseClasses, variantClasses[variant], className);
+
+  const isExternal = (url: string) => {
+    return /^(https?:\/\/|\/\/|mailto:|tel:)/i.test(url);
+  };
 
   const content = (
     <>
@@ -41,10 +46,17 @@ export const Button = ({
   );
 
   if (href) {
+    if (isExternal(href)) {
+      return (
+        <a href={href} className={buttonClass} target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
+      );
+    }
     return (
-      <a href={href} className={buttonClass}>
+      <Link to={href} className={buttonClass}>
         {content}
-      </a>
+      </Link>
     );
   }
 
