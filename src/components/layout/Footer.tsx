@@ -1,4 +1,5 @@
 import { siteConfig } from '../../config/site.config';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -16,10 +17,10 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <h3 className="text-base font-semibold text-white">Quick Links</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="/about" className="text-sm text-text-muted hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/departments" className="text-sm text-text-muted hover:text-white transition-colors">Departments</a></li>
-              <li><a href="/faculties" className="text-sm text-text-muted hover:text-white transition-colors">Faculties</a></li>
-              <li><a href="/news" className="text-sm text-text-muted hover:text-white transition-colors">News & Events</a></li>
+              <li><Link to="/about" className="text-sm text-text-muted hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/departments" className="text-sm text-text-muted hover:text-white transition-colors">Departments</Link></li>
+              <li><Link to="/faculties" className="text-sm text-text-muted hover:text-white transition-colors">Faculties</Link></li>
+              <li><Link to="/news" className="text-sm text-text-muted hover:text-white transition-colors">News & Events</Link></li>
             </ul>
           </div>
 
@@ -27,10 +28,10 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <h3 className="text-base font-semibold text-white">Programs</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="/programs/undergraduate" className="text-sm text-text-muted hover:text-white transition-colors">Undergraduate</a></li>
-              <li><a href="/programs/graduate" className="text-sm text-text-muted hover:text-white transition-colors">Graduate</a></li>
-              <li><a href="/programs/teaching" className="text-sm text-text-muted hover:text-white transition-colors">Teaching</a></li>
-              <li><a href="/programs/online" className="text-sm text-text-muted hover:text-white transition-colors">Online Programs</a></li>
+              <li><Link to="/programs/undergraduate" className="text-sm text-text-muted hover:text-white transition-colors">Undergraduate</Link></li>
+              <li><Link to="/programs/graduate" className="text-sm text-text-muted hover:text-white transition-colors">Graduate</Link></li>
+              <li><Link to="/programs/teaching" className="text-sm text-text-muted hover:text-white transition-colors">Teaching</Link></li>
+              <li><Link to="/programs/online" className="text-sm text-text-muted hover:text-white transition-colors">Online Programs</Link></li>
             </ul>
           </div>
 
@@ -64,7 +65,7 @@ export const Footer = () => {
 
         {/* Footer Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-8 border-t border-gray-600 gap-4">
-          <p className="text-sm text-text-muted">© 2023 KNUST College of Science. All rights reserved.</p>
+          <p className="text-sm text-text-muted">© 2025 KNUST College of Science. All rights reserved.</p>
           <div className="flex gap-4">
             <a href={siteConfig.social.facebook} className="text-white hover:opacity-70 transition-opacity" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
