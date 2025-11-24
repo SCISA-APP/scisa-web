@@ -15,7 +15,7 @@ export const ExecutiveCard = ({
 }: ExecutiveCardProps) => {
   return (
     <div className={cn("flex flex-col items-center text-center", className)}>
-      <div className="w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-primary shadow-lg">
+      <div className="w-44 h-44 rounded-full overflow-hidden mb-4 border-4 border-primary shadow-lg">
         <img src={image} alt={name} className="w-full h-full object-cover" />
       </div>
       <div className="flex flex-col gap-1">
