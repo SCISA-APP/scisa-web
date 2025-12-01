@@ -7,14 +7,18 @@ const items = [
 
 const Stats = () => {
   return (
-    <section className="py-20 md:py-24 bg-white">
-      <div className="container-custom grid grid-cols-2 md:grid-cols-4 gap-8">
-        {items.map((s) => (
-          <div key={s.label} className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary">{s.value}</div>
-            <div className="text-sm md:text-base text-text-secondary mt-1">{s.label}</div>
+    <section className="relative -mt-20 z-20 pb-20">
+      <div className="container-custom">
+        <div className="glass rounded-2xl p-8 md:p-12 shadow-xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100/20">
+            {items.map((s, i) => (
+              <div key={s.label} className={`text-center ${i % 2 !== 0 ? 'border-l border-gray-100 md:border-none' : ''}`}>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{s.value}</div>
+                <div className="text-sm md:text-base text-text-secondary font-medium uppercase tracking-wide">{s.label}</div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
