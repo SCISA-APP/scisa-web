@@ -170,70 +170,49 @@ function AppLanding() {
       {/* Waitlist Section */}
       <section className="py-24 bg-white">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto bg-gray-900 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden shadow-2xl">
-            
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl font-bold mb-6 text-white">
-                  Get Early Access
-                </h2>
-                <p className="text-lg text-gray-400 mb-8">
-                  Join thousands of students on the waitlist. Be the first to experience the future of student life at KNUST.
-                </p>
-                
-                <div className="flex flex-wrap gap-6 text-sm font-medium text-gray-400">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>No spam, ever</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Free forever</span>
-                  </div>
-                </div>
+          <div className="max-w-4xl mx-auto bg-gray-900 rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+            {/* Background Decoration */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-lg bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
+
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Get Early Access
+              </h2>
+              <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Join thousands of students on the waitlist. Be the first to experience the future of student life at KNUST.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a 
+                  href="https://tally.so" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-10 py-5 text-lg font-bold bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/25 transform hover:-translate-y-1"
+                >
+                  Join the Waitlist
+                </a>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-gray-300 font-medium mb-2 text-sm">Full Name</label>
-                      <input 
-                        type="text" 
-                        className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" 
-                        placeholder="John Doe" 
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-300 font-medium mb-2 text-sm">Email Address</label>
-                      <input 
-                        type="email" 
-                        className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" 
-                        placeholder="john@knust.edu.gh" 
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 font-medium mb-2 text-sm">Department</label>
-                    <input 
-                      type="text" 
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" 
-                      placeholder="e.g., Computer Science" 
-                    />
-                  </div>
-
-                  <button 
-                    type="submit"
-                    className="w-full py-4 text-lg font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20 transform hover:-translate-y-0.5"
-                  >
-                    Secure My Spot
-                  </button>
-                </form>
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap justify-center gap-8 text-gray-500 text-sm font-medium">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>No spam, ever</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Free forever</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Priority access</span>
+                </div>
               </div>
             </div>
           </div>
