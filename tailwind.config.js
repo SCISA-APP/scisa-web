@@ -7,15 +7,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#8B0000',
-        'text-primary': '#1E293B',
-        'text-secondary': '#4A5565',
-        'bg-dark': '#1a1a1a',
-        'text-light': '#e5e7eb',
-        'text-muted': '#9ca3af',
+        primary: {
+          DEFAULT: '#8B0000', // Deep Red
+          light: '#A52A2A',
+          dark: '#600000',
+        },
+        secondary: '#F3F4F6', // Light Gray
+        surface: '#FFFFFF',
+        background: '#FAFAFA', // Off-white background
+        text: {
+          primary: '#111827', // Almost Black
+          secondary: '#4B5563', // Dark Gray
+          muted: '#9CA3AF', // Light Gray
+          light: '#F9FAFB',
+        },
       },
       fontFamily: {
-        sans: ['Arial', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
       },
     },
   },
