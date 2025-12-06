@@ -38,7 +38,12 @@ export const mainNavigation: NavItem[] = [
     name: "News",
     href: "/news", 
     description: "Latest news and updates"
-  }
+  },
+  {
+    name: "Management",
+    href: "/management", 
+    description: "Latest news and updates"
+  },
 ];
 
 export const footerNavigation = {
