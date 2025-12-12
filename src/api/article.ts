@@ -1,15 +1,15 @@
 // src/pages/management/articles/api.ts
 import { supabase } from "../lib/supabaseClient";
-import type { Article,ArticleInsert } from "../types/Articles";
+import type { Article, ArticleInsert } from "../types/Articles";
 
 export const fetchArticles = async (): Promise<Article[]> => {
   const { data, error } = await supabase
-    .from<Article>("articles")
+    .from<"articles", any>("articles")
     .select("*")
     .order("created_at", { ascending: false });
 
   if (error) throw error;
-  return data || [];
+  return (data as unknown as Article[]) || [];
 };
 
 export const uploadImage = async (file: File): Promise<string> => {
@@ -23,6 +23,6 @@ export const uploadImage = async (file: File): Promise<string> => {
 };
 
 export const addArticle = async (article: ArticleInsert) => {
-  const { error } = await supabase.from<ArticleInsert>("articles").insert([article]);
+  const { error } = await supabase.from<"articles", any>("articles").insert([article]);
   if (error) throw error;
 };
