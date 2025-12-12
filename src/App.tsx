@@ -9,6 +9,7 @@ import News from "./pages/News";
 import AppLanding from "./pages/AppLanding";
 import Management from "./pages/management/Management";
 import Login from "./pages/Login";
+import Privacy from "./pages/Privacy";
 
 import ProtectedRoute from "./lib/protectedRoute";
 
@@ -41,6 +42,8 @@ function AppContent() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="/privacy" element={<Privacy />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
