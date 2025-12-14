@@ -1,6 +1,7 @@
 import { ExecutiveCard } from '../components/ui/ExecutiveCard';
 import { ServiceCard } from '../components/ui/ServiceCard';
 import { Button } from '../components/ui/Button';
+import scisaAppImg from '../assets/images/scisa-app.jpg';
 
 function ExecutivesPage() {
   const executives = [
@@ -8,7 +9,7 @@ function ExecutivesPage() {
       name: 'Jane Doe',
       title: 'President',
       department: 'Biological Sciences',
-      image: 'src/assets/images/scisa-app.jpg',
+      image: scisaAppImg,
       quote: "I'm committed to representing student voices and creating opportunities for collaboration across departments.",
       linkedin: 'https://www.linkedin.com',
       email: 'jane.doe@example.com'
@@ -17,7 +18,7 @@ function ExecutivesPage() {
       name: 'John Smith',
       title: "Vice President",
       department: 'Mathematics',
-      image: 'src/assets/images/scisa-app.jpg',
+      image: scisaAppImg,
       quote: "I focus on academic excellence and student support initiatives to improve retention and outcomes.",
       linkedin: 'https://www.linkedin.com',
       email: 'john.smith@example.com'
@@ -26,7 +27,7 @@ function ExecutivesPage() {
       name: 'Mary Johnson',
       title: "Secretary",
       department: 'Chemistry',
-      image: 'src/assets/images/scisa-app.jpg',
+      image: scisaAppImg,
       quote: "Communication and transparency are at the heart of what I do for our student body.",
       linkedin: 'https://www.linkedin.com',
       email: 'mary.johnson@example.com'
@@ -35,17 +36,16 @@ function ExecutivesPage() {
       name: 'Samuel Lee',
       title: "Treasurer",
       department: 'Physics',
-      image: 'src/assets/images/scisa-app.jpg',
+      image: scisaAppImg,
       quote: "I manage our resources carefully so we can deliver high-impact events and services.",
       linkedin: 'https://www.linkedin.com',
       email: 'samuel.lee@example.com'
-    }
-    ,
+    },
     {
       name: 'Aisha Mensah',
       title: "Welfare Officer",
       department: 'Environmental Science',
-      image: 'src/assets/images/scisa-app.jpg',
+      image: scisaAppImg,
       quote: "I advocate for student wellbeing and coordinate support programs across the college.",
       linkedin: 'https://www.linkedin.com',
       email: 'aisha.mensah@example.com'
@@ -54,7 +54,7 @@ function ExecutivesPage() {
       name: 'Kwame Opoku',
       title: "Events Coordinator",
       department: 'Computer Science',
-      image: 'src/assets/images/scisa-app.jpg',
+      image: scisaAppImg,
       quote: "I plan and execute engaging events that bring our community together and showcase student talent.",
       linkedin: 'https://www.linkedin.com',
       email: 'kwame.opoku@example.com'
@@ -65,11 +65,11 @@ function ExecutivesPage() {
     <main className="flex-1 ">
       <div className="relative w-full h-[640px] md:h-[720px] mb-20">
         <img
-          src="src/assets/images/scisa-app.jpg"
+          src={scisaAppImg}
           alt="SCISA App"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-bg-dark/40" />
+        <div className="absolute inset-0 bg-black/50" />
 
         <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 text-white ">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-light mb-4">
