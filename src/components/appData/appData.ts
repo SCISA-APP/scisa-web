@@ -1,33 +1,41 @@
+import IconCourse from '../../assets/svgs/Icon-course.svg';
+import IconCalendar from '../../assets/svgs/Icon-calendar.svg';
+import IconDirectory from '../../assets/svgs/Icon-directory.svg';
+import IconNotifications from '../../assets/svgs/Icon-notifications.svg';
+import IconForum from '../../assets/svgs/Icon-forum.svg';
+import IconMobile from '../../assets/svgs/Icon-mobile.svg';
+import IconCheck from '../../assets/svgs/Icon-check.svg';
+
 export const resources = [
   {
     title: "Course Materials",
     desc: "Access lecture notes, assignments, and study resources all in one place",
-    icon: "src/assets/svgs/Icon-course.svg"
+    icon: IconCourse
   },
   {
     title: "Event Calendar",
     desc: "Stay updated on academic deadlines, seminars, and social events",
-    icon: "src/assets/svgs/Icon-calendar.svg"
+    icon: IconCalendar
   },
   {
     title: "Student Directory",
     desc: "Connect with classmates, form study groups, and network with peers",
-    icon: "src/assets/svgs/Icon-directory.svg"
+    icon: IconDirectory
   },
   {
     title: "Notification",
     desc: "Receive real-time alerts for important announcements and updates",
-    icon: "src/assets/svgs/Icon-notifications.svg"
+    icon: IconNotifications
   },
   {
     title: "Discussion Forums",
     desc: "Participate in course discussions and get help from peers and TAs",
-    icon: "src/assets/svgs/Icon-forum.svg"
+    icon: IconForum
   },
   {
     title: "Mobile First",
     desc: "Designed for mobile with seamless desktop experience",
-    icon: "src/assets/svgs/Icon-mobile.svg"
+    icon: IconMobile
   },
 ];
 
@@ -35,17 +43,17 @@ export const needs = [
   {
     title: "Streamlined Communication",
     desc: "Direct access to department announcements and faculty updates",
-    icon: "src/assets/svgs/Icon-check.svg"
+    icon: IconCheck
   },
   {
     title: "Academic Support",
     desc: "Find tutors, join study groups, and access past papers",
-    icon: "src/assets/svgs/Icon-check.svg"
+    icon: IconCheck
   },
   {
     title: "Community Building",
     desc: "Connect with peers across departments and year groups",
-    icon: "src/assets/svgs/Icon-check.svg"
+    icon: IconCheck
   },
 ];
 
