@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { resources, needs, faqs } from "../components/appData/appData";
 import { Button } from "../components/ui";
+import scisaAppMockup from "../assets/images/scisa-app-mockup.png";
+import scisaAppImg from "../assets/images/scisa-app.jpg";
 
 function AppLanding() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -13,7 +15,7 @@ function AppLanding() {
     <main className="flex-1 bg-white overflow-hidden">
       
       {/* Hero Section - Clean & Minimal */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-20 md:pt-32 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="container-custom relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             {/* Badge */}
@@ -49,7 +51,7 @@ function AppLanding() {
             <div className="relative mt-12">
               <div className="relative max-w-5xl mx-auto">
                 <img 
-                  src="src/assets/images/scisa-app-mockup.png" 
+                  src={scisaAppMockup} 
                   alt="SCISA App Preview" 
                   className="w-full drop-shadow-2xl rounded-t-3xl border border-gray-200 border-b-0"
                 />
@@ -84,7 +86,7 @@ function AppLanding() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">
@@ -117,14 +119,14 @@ function AppLanding() {
       </section>
 
       {/* App Showcase Section */}
-      <section className="py-24 bg-gray-50 overflow-hidden">
+      <section className="py-16 md:py-24 bg-gray-50 overflow-hidden">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/5 rounded-3xl transform rotate-3" />
                 <img
-                  src="src/assets/images/scisa-app.jpg"
+                  src={scisaAppImg}
                   className="relative rounded-3xl shadow-xl w-full border border-gray-200"
                   alt="App Interface"
                 />
