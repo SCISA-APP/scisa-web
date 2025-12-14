@@ -1,15 +1,16 @@
 import { Button } from '../ui';
+import scisaAppMockup from '../../assets/images/scisa-app-mockup.png';
 
 const AppPromo = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="order-2 lg:order-1">
           <div className="relative">
             {/* Simple decorative circle instead of glow */}
             <div className="absolute inset-0 bg-gray-100 rounded-full transform scale-90 translate-y-10 -z-10" />
             <img
-              src="src/assets/images/scisa-app-mockup.png"
+              src={scisaAppMockup}
               alt="SCISA App Mockup"
               className="relative z-10 w-full max-w-md mx-auto transform hover:scale-[1.02] transition-transform duration-500 drop-shadow-xl"
             />

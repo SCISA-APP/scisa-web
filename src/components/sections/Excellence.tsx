@@ -2,7 +2,7 @@ import { Button } from '../ui';
 
 const Excellence = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center gap-16 lg:gap-24">
           <div className="w-full md:w-1/2 relative">
@@ -13,7 +13,7 @@ const Excellence = () => {
               <img
                 src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=80"
                 alt="Science Lab"
-                className="w-full h-[400px] lg:h-[500px] object-cover"
+                className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

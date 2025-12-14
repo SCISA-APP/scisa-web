@@ -26,7 +26,7 @@ const items = [
 
 const News = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container-custom">
         <div className="flex justify-between items-end mb-12">
           <div className="max-w-2xl">
