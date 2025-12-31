@@ -7,7 +7,6 @@ const AppPromo = () => {
       <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="order-2 lg:order-1">
           <div className="relative">
-            {/* Simple decorative circle instead of glow */}
             <div className="absolute inset-0 bg-gray-100 rounded-full transform scale-90 translate-y-10 -z-10" />
             <img
               src={scisaAppMockup}
