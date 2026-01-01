@@ -38,7 +38,7 @@ const Departments = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-neutral-100 flex flex-col"
+              className="bg-white rounded-xl overflow-hidden border border-neutral-200 hover:border-primary-600 transition-all duration-300 group flex flex-col"
             >
               <div className="h-48 overflow-hidden relative">
                 <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider text-neutral-800">
