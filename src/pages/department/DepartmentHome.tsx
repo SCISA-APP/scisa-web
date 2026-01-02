@@ -5,7 +5,7 @@ import type { Department } from '../../data/departments';
 import { ArrowRight, Users, GraduationCap, BookOpen, Clock, MapPin } from 'lucide-react';
 
 const DepartmentHome = () => {
-  // Force HMR update
+
   const { department } = useOutletContext<{ department: Department }>();
 
   const containerVariants = {
