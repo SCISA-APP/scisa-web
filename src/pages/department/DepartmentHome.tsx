@@ -2,8 +2,8 @@
 import { useOutletContext, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Department } from '../../data/departments';
-import { ArrowRight, Users, GraduationCap, BookOpen, Clock, MapPin, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { ArrowRight, Users, GraduationCap, BookOpen, Clock, MapPin, ChevronDown, Quote } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const DepartmentHome = () => {
 
@@ -29,14 +29,14 @@ const DepartmentHome = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-1 lg:grid-cols-3 gap-12"
+      className="grid grid-cols-1 lg:grid-cols-3 gap-8"
     >
       {/* Main Content Column */}
-      <div className="lg:col-span-2 space-y-12">
+      <div className="lg:col-span-2 space-y-8">
         <section>
           <motion.h2 
             variants={itemVariants}
-            className="text-2xl font-bold font-display text-neutral-900 mb-6"
+            className="text-2xl font-bold font-display text-neutral-900 mb-4"
           >
             Welcome to the {department.name}
           </motion.h2>
@@ -44,27 +44,47 @@ const DepartmentHome = () => {
             variants={itemVariants}
             className="prose prose-neutral max-w-none text-neutral-600 leading-relaxed"
           >
-            <p className="text-lg">
+            <p className="text-xl font-light text-neutral-800 mb-8 border-l-4 border-primary-500 pl-6 italic">
               {department.description}
             </p>
-            <p>
-              We are dedicated to fostering an environment of academic excellence and 
-              innovative research. Our goal is to equip students with the theoretical 
-              knowledge and practical skills necessary to tackle complex challenges 
-              in the modern world.
-            </p>
-            <p>
-              Through our rigorous curriculum and state-of-the-art facilities, 
-              we provide a platform for students to explore their passions and 
-              contribute to scientific advancement.
-            </p>
+            {department.about?.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
           </motion.div>
           
+          {/* Spotlight Section */}
+          {department.spotlight && (
+            <motion.div variants={itemVariants} className="mt-8 bg-neutral-900 rounded-xl p-8 text-white relative overflow-hidden">
+               <div className="absolute top-0 right-0 p-8 opacity-10">
+                 <Quote className="w-32 h-32 text-white" />
+               </div>
+               <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
+                 <img 
+                   src={department.spotlight.image} 
+                   alt={department.spotlight.name}
+                   className="w-20 h-20 rounded-full object-cover border-2 border-primary-500"
+                 />
+                 <div>
+                   <div className="inline-block px-3 py-1 bg-primary-600 text-xs font-bold uppercase tracking-wider rounded-full mb-3">
+                     Spotlight
+                   </div>
+                   <blockquote className="text-xl font-display font-medium leading-relaxed mb-4">
+                     "{department.spotlight.quote}"
+                   </blockquote>
+                   <div>
+                     <div className="font-bold">{department.spotlight.name}</div>
+                     <div className="text-neutral-400 text-sm">{department.spotlight.role}</div>
+                   </div>
+                 </div>
+               </div>
+            </motion.div>
+          )}
+
           {/* Our Vision */}
           {department.vision && (
              <motion.div
               variants={itemVariants}
-              className="mt-8 border-l-4 border-primary-600 pl-6 py-2 bg-neutral-50"
+              className="mt-6 border-l-4 border-primary-600 pl-6 py-2 bg-neutral-50"
             >
               <h3 className="text-sm font-bold text-neutral-400 uppercase tracking-wider mb-2">Our Vision</h3>
               <p className="text-lg font-medium text-neutral-900 italic">
@@ -77,10 +97,10 @@ const DepartmentHome = () => {
         {/* Research Areas */}
         {department.researchAreas && department.researchAreas.length > 0 && (
           <section>
-             <h2 className="text-2xl font-bold font-display text-neutral-900 mb-6">Research Areas</h2>
-             <div className="grid sm:grid-cols-2 gap-4">
+             <h2 className="text-xl font-bold font-display text-neutral-900 mb-4">Research Areas</h2>
+             <div className="grid sm:grid-cols-2 gap-3">
                {department.researchAreas.map((area, idx) => (
-                 <div key={idx} className="flex items-center gap-3 p-4 border border-neutral-100 rounded-lg hover:border-primary-200 transition-colors bg-white">
+                 <div key={idx} className="flex items-center gap-3 p-3 border border-neutral-100 rounded-lg hover:border-primary-200 transition-colors bg-white">
                    <div className="w-2 h-2 rounded-full bg-primary-500" />
                    <span className="font-medium text-neutral-700">{area}</span>
                  </div>
@@ -91,32 +111,54 @@ const DepartmentHome = () => {
 
         {/* Why Choose Us */}
         {department.whyChoose && department.whyChoose.length > 0 && (
-          <section className="py-2">
-            <h2 className="text-2xl font-bold font-display text-neutral-900 mb-6">Why Choose {department.name.replace('Department of ', '')}?</h2>
-            <div className="space-y-5">
+          <section className="py-6">
+            <h2 className="text-xl font-bold font-display text-neutral-900 mb-8">
+              Why Choose {department.name.replace('Department of ', '')}?
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
               {department.whyChoose.map((reason, idx) => (
-                <div key={idx} className="flex items-start gap-4">
-                   <div className="mt-1 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                   </div>
-                   <p className="text-neutral-700 text-lg leading-relaxed">{reason}</p>
+                <div key={idx} className="group">
+                   <div className="w-12 h-1 bg-neutral-200 group-hover:bg-primary-600 transition-colors duration-300 mb-4" />
+                   <p className="text-lg font-medium text-neutral-900 leading-snug">
+                    {reason}
+                   </p>
                 </div>
               ))}
             </div>
           </section>
         )}
 
+        
+        {/* Gallery Section */}
+        {department.gallery && department.gallery.length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold font-display text-neutral-900 mb-4">Life at {department.name.replace('Department of ', '')}</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+               {department.gallery.map((img, idx) => (
+                 <div key={idx} className={`rounded-lg overflow-hidden group relative h-48 ${idx === 0 ? 'col-span-2 md:col-span-2 row-span-2 h-full' : ''}`}>
+                    <img 
+                      src={img} 
+                      alt="Department Life" 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                 </div>
+               ))}
+            </div>
+          </section>
+        )}
+
         {/* Featured Programs Preview */}
         <section>
-          <div className="flex items-center justify-between mb-6">
-            <motion.h2 variants={itemVariants} className="text-2xl font-bold font-display text-neutral-900">
+          <div className="flex items-center justify-between mb-4">
+            <motion.h2 variants={itemVariants} className="text-xl font-bold font-display text-neutral-900">
               Degrees & Programmes
             </motion.h2>
             <Link to="programmes" className="text-primary-600 font-medium hover:text-primary-700 flex items-center gap-1">
               View All <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {department.programmes.slice(0, 3).map((prog) => (
               <ProgrammeAccordionItem key={prog.id} prog={prog} />
             ))}
@@ -125,7 +167,7 @@ const DepartmentHome = () => {
       </div>
 
       {/* Sidebar Column */}
-      <div className="space-y-8">
+      <div className="space-y-6">
         {/* Quick Stats Card */}
         <motion.div variants={itemVariants} className="bg-neutral-900 text-white p-8 rounded-xl">
           <h3 className="font-display font-bold text-xl mb-6">Quick Facts</h3>
@@ -135,7 +177,9 @@ const DepartmentHome = () => {
                 <Users className="w-6 h-6 text-primary-400" />
               </div>
               <div>
-                <div className="text-2xl font-bold">{department.stats.students}+</div>
+                <div className="text-2xl font-bold">
+                  <Counter value={department.stats.students} />+
+                </div>
                 <div className="text-neutral-400 text-sm">Enrolled Students</div>
               </div>
             </div>
@@ -144,7 +188,9 @@ const DepartmentHome = () => {
                 <GraduationCap className="w-6 h-6 text-primary-400" />
               </div>
               <div>
-                <div className="text-2xl font-bold">{department.stats.faculty}</div>
+                <div className="text-2xl font-bold">
+                  <Counter value={department.stats.faculty} />
+                </div>
                 <div className="text-neutral-400 text-sm">Faculty Members</div>
               </div>
             </div>
@@ -153,7 +199,9 @@ const DepartmentHome = () => {
                 <BookOpen className="w-6 h-6 text-primary-400" />
               </div>
               <div>
-                <div className="text-2xl font-bold">{department.stats.researchPapers}</div>
+                <div className="text-2xl font-bold">
+                  <Counter value={department.stats.researchPapers} />
+                </div>
                 <div className="text-neutral-400 text-sm">Research Papers</div>
               </div>
             </div>
@@ -253,5 +301,30 @@ const ProgrammeAccordionItem = ({ prog }: { prog: any }) => {
     </div>
   );
 };
+
+const Counter = ({ value }: { value: number }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = value;
+    const duration = 2000;
+    const increment = end / (duration / 16);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [value]);
+
+  return <span>{count}</span>;
+}
 
 export default DepartmentHome;
