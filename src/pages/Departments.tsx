@@ -89,11 +89,11 @@ const Departments = () => {
           <p className="text-neutral-500 mb-8 text-lg">
             Join KNUST College of Science and become part of a tradition of excellence in scientific education and research.
           </p>
-          <div className="flex justify-center gap-4">
-            <button className="bg-primary-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-black transition-colors">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <button className="bg-primary-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-black transition-colors w-full sm:w-auto">
               Apply Now
             </button>
-            <button className="bg-white text-primary-900 border border-primary-900 px-8 py-3 rounded-lg font-medium hover:bg-primary-50 transition-colors">
+            <button className="bg-white text-primary-900 border border-primary-900 px-8 py-3 rounded-lg font-medium hover:bg-primary-50 transition-colors w-full sm:w-auto">
               Schedule a Visit
             </button>
           </div>

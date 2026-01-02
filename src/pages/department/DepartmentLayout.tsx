@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { DEPARTMENTS } from '../../data/departments';
 
 const DepartmentLayout = () => {
+  // Force HMR refresh
   const { slug } = useParams<{ slug: string }>();
   const department = DEPARTMENTS.find(d => d.slug === slug);
 
