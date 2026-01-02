@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useOutletContext } from 'react-router-dom';
 import type { Department } from '../../data/departments';
 import { motion } from 'framer-motion';

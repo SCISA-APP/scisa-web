@@ -1,8 +1,7 @@
-import React from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
 import type { Department } from '../../data/departments';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 const DepartmentProgrammes = () => {
   const { department } = useOutletContext<{ department: Department }>();

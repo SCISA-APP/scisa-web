@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useParams, Outlet, NavLink, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { DEPARTMENTS } from '../../data/departments';
