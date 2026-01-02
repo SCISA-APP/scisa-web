@@ -1,13 +1,18 @@
 import { useOutletContext, Link } from 'react-router-dom';
 import type { Department } from '../../data/departments';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 const DepartmentProgrammes = () => {
   const { department } = useOutletContext<{ department: Department }>();
 
   return (
     <div className="max-w-4xl mx-auto">
+      <Link to=".." className="inline-flex items-center text-neutral-500 hover:text-primary-600 mb-8 transition-colors text-sm font-medium">
+        <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
+        Back to {department.name.replace('Department of ', '')}
+      </Link>
+
       <div className="mb-12">
         <h2 className="text-3xl font-display font-bold text-neutral-900 mb-6">Academic Programmes</h2>
         <p className="text-neutral-600 text-lg leading-relaxed">

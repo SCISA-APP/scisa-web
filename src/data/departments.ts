@@ -19,6 +19,14 @@ export interface Department {
     name: string;
     heroImage: string;
     description: string;
+    vision: string;
+    researchAreas: string[];
+    whyChoose: string[];
+    contact: {
+        email: string;
+        phone: string;
+        location: string;
+    };
     headOfDepartment: {
         name: string;
         message: string;
@@ -40,6 +48,14 @@ export const DEPARTMENTS: Department[] = [
         name: 'Department of Computer Science',
         heroImage: 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&q=80',
         description: 'The Department of Computer Science prepares students for careers in software development, artificial intelligence, cybersecurity, and data science through cutting-edge curriculum and hands-on experience.',
+        vision: 'To be a global leader in computer science education and research, driving innovation and societal impact.',
+        researchAreas: ['Artificial Intelligence', 'Cybersecurity', 'Data Science', 'Software Engineering'],
+        whyChoose: ['State-of-the-art computer labs', 'Industry partnerships with tech giants', 'High employability rate'],
+        contact: {
+            email: 'cs@knust.edu.gh',
+            phone: '+233 3220 12345',
+            location: 'College of Science Building, 2nd Floor'
+        },
         headOfDepartment: {
             name: 'Dr. John Doe',
             message: 'Welcome to the forefront of digital innovation. Our department is committed to shaping the tech leaders of tomorrow.',
@@ -92,19 +108,46 @@ export const DEPARTMENTS: Department[] = [
         slug: 'chemistry',
         name: 'Department of Chemistry',
         heroImage: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80',
-        description: 'Exploring the fundamental building blocks of matter. Our chemistry department excels in organic, inorganic, and physical chemistry research.',
+        description: 'Our Chemistry Department offers comprehensive training in analytical, organic, inorganic, and physical chemistry with state-of-the-art laboratories and research facilities.',
+        vision: 'To advance chemical sciences through innovative research and quality education.',
+        researchAreas: ['Organic Synthesis', 'Analytical Chemistry', 'Environmental Chemistry', 'Pharmaceutical Chemistry'],
+        whyChoose: ['State-of-the-art facilities', 'Experienced faculty', 'Industry partnerships', 'Research opportunities'],
+        contact: {
+            email: 'chemistry@knust.edu.gh',
+            phone: '+233 3220 54321',
+            location: 'Science Complex, Block C'
+        },
         headOfDepartment: {
             name: 'Prof. Marie Curie',
             message: 'Chemistry is the central science. Join us in discovering new materials and medicines.',
             image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80'
         },
         stats: {
-            students: 450,
+            students: 600,
             faculty: 28,
             researchPapers: 200
         },
         faculty: [],
-        programmes: []
+        programmes: [
+            {
+                id: 'bsc-chem',
+                title: 'BSc Chemistry',
+                level: 'BSc',
+                description: 'Foundational training in modern chemical sciences.'
+            },
+            {
+                id: 'msc-ind-chem',
+                title: 'MSc Industrial Chemistry',
+                level: 'MSc',
+                description: 'Advanced study of chemical processes in industry.'
+            },
+            {
+                id: 'phd-chem',
+                title: 'PhD Chemistry',
+                level: 'PhD',
+                description: 'Cutting-edge research in specialized chemical fields.'
+            }
+        ]
     },
     {
         id: 'phys',
@@ -112,6 +155,14 @@ export const DEPARTMENTS: Department[] = [
         name: 'Department of Physics',
         heroImage: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&q=80',
         description: 'From quantum mechanics to astrophysics, we probe the laws that govern the universe.',
+        vision: 'To unravel the mysteries of the universe through rigorous inquiry and experimentation.',
+        researchAreas: ['Quantum Mechanics', 'Astrophysics', 'Solid State Physics', 'Geophysics'],
+        whyChoose: ['World-class observatories', 'Leading research groups', 'International collaborations'],
+        contact: {
+            email: 'physics@knust.edu.gh',
+            phone: '+233 3220 98765',
+            location: 'Science Complex, Block A'
+        },
         headOfDepartment: {
             name: 'Dr. Richard Feynman',
             message: 'Nature uses only the longest threads to weave her patterns.',
@@ -123,7 +174,26 @@ export const DEPARTMENTS: Department[] = [
             researchPapers: 150
         },
         faculty: [],
-        programmes: []
+        programmes: [
+            {
+                id: 'bsc-phys',
+                title: 'BSc Physics',
+                level: 'BSc',
+                description: 'Study of matter, energy, and the fundamental forces of nature.'
+            },
+            {
+                id: 'msc-geophys',
+                title: 'MSc Geophysics',
+                level: 'MSc',
+                description: 'Application of physics to study the Earth.'
+            },
+            {
+                id: 'phd-phys',
+                title: 'PhD Physics',
+                level: 'PhD',
+                description: 'Original research in theoretical or experimental physics.'
+            }
+        ]
     },
     {
         id: 'math',
@@ -131,6 +201,14 @@ export const DEPARTMENTS: Department[] = [
         name: 'Department of Mathematics',
         heroImage: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80',
         description: 'The language of the universe. We offer rigorous training in pure and applied mathematics.',
+        vision: 'To be a center of excellence in mathematical sciences and applications.',
+        researchAreas: ['Applied Mathematics', 'Pure Mathematics', 'Statistics', 'Computational Modeling'],
+        whyChoose: ['Strong analytical training', 'Versatile career paths', 'Expert faculty'],
+        contact: {
+            email: 'math@knust.edu.gh',
+            phone: '+233 3220 11223',
+            location: 'Mathematics Building'
+        },
         headOfDepartment: {
             name: 'Prof. Katherine Johnson',
             message: 'Mathematics is the key to understanding the world around us.',
@@ -142,7 +220,20 @@ export const DEPARTMENTS: Department[] = [
             researchPapers: 90
         },
         faculty: [],
-        programmes: []
+        programmes: [
+            {
+                id: 'bsc-math',
+                title: 'BSc Mathematics',
+                level: 'BSc',
+                description: 'Rigorous training in mathematical theories and applications.'
+            },
+            {
+                id: 'msc-actuarial',
+                title: 'MSc Actuarial Science',
+                level: 'MSc',
+                description: 'Statistical and mathematical methods for risk assessment.'
+            }
+        ]
     },
     {
         id: 'biochem',
@@ -150,6 +241,14 @@ export const DEPARTMENTS: Department[] = [
         name: 'Department of Biochemistry',
         heroImage: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80',
         description: 'Bridging biology and chemistry to understand life at the molecular level.',
+        vision: 'To reveal the molecular mechanisms of life and improve health and sustainability.',
+        researchAreas: ['Molecular Biology', 'Clinical Biochemistry', 'Biotechnology', 'Drug Discovery'],
+        whyChoose: ['Advanced laboratories', 'Interdisciplinary approach', 'Focus on health solutions'],
+        contact: {
+            email: 'biochem@knust.edu.gh',
+            phone: '+233 3220 33445',
+            location: 'Biosciences Complex'
+        },
         headOfDepartment: {
             name: 'Dr. Rosalind Franklin',
             message: 'Unlocking the secrets of life, one molecule at a time.',
@@ -161,7 +260,20 @@ export const DEPARTMENTS: Department[] = [
             researchPapers: 110
         },
         faculty: [],
-        programmes: []
+        programmes: [
+            {
+                id: 'bsc-biochem',
+                title: 'BSc Biochemistry',
+                level: 'BSc',
+                description: 'Chemical processes within and related to living organisms.'
+            },
+            {
+                id: 'msc-biotech',
+                title: 'MSc Biotechnology',
+                level: 'MSc',
+                description: 'Technological applications using biological systems.'
+            }
+        ]
     },
     {
         id: 'bio',
@@ -169,6 +281,14 @@ export const DEPARTMENTS: Department[] = [
         name: 'Department of Biology',
         heroImage: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80',
         description: 'Studying life in all its forms, from microscopic organisms to complex ecosystems.',
+        vision: 'To advance understanding of the living world and conserve biodiversity.',
+        researchAreas: ['Ecology', 'Microbiology', 'Zoology', 'Botany'],
+        whyChoose: ['Field work opportunities', 'Diverse specialization options', 'Conservation focus'],
+        contact: {
+            email: 'biology@knust.edu.gh',
+            phone: '+233 3220 55667',
+            location: 'Biosciences Complex'
+        },
         headOfDepartment: {
             name: 'Prof. Charles Darwin',
             message: 'It is not the strongest of the species that survives, but the one most adaptable to change.',
@@ -180,6 +300,19 @@ export const DEPARTMENTS: Department[] = [
             researchPapers: 180
         },
         faculty: [],
-        programmes: []
+        programmes: [
+            {
+                id: 'bsc-bio',
+                title: 'BSc Biological Sciences',
+                level: 'BSc',
+                description: 'Broad study of living organisms and their interactions.'
+            },
+            {
+                id: 'msc-env-bio',
+                title: 'MSc Environmental Biology',
+                level: 'MSc',
+                description: 'Study of organisms in relation to their environment.'
+            }
+        ]
     }
 ];
