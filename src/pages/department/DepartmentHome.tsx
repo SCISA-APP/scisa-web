@@ -109,24 +109,7 @@ const DepartmentHome = () => {
           </section>
         )}
 
-        {/* Why Choose Us */}
-        {department.whyChoose && department.whyChoose.length > 0 && (
-          <section className="py-6">
-            <h2 className="text-xl font-bold font-display text-neutral-900 mb-8">
-              Why Choose {department.name.replace('Department of ', '')}?
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
-              {department.whyChoose.map((reason, idx) => (
-                <div key={idx} className="group">
-                   <div className="w-12 h-1 bg-neutral-200 group-hover:bg-primary-600 transition-colors duration-300 mb-4" />
-                   <p className="text-lg font-medium text-neutral-900 leading-snug">
-                    {reason}
-                   </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+
 
         
         {/* Gallery Section */}
