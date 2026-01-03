@@ -22,7 +22,6 @@ export interface Department {
     about: string[];  // Array of paragraphs for rich text
     vision: string;
     researchAreas: string[];
-    whyChoose: string[];
     contact: {
         email: string;
         phone: string;
@@ -63,7 +62,6 @@ export const DEPARTMENTS: Department[] = [
         ],
         vision: 'To be a global leader in computer science education and research, driving innovation and societal impact.',
         researchAreas: ['Artificial Intelligence', 'Cybersecurity', 'Data Science', 'Software Engineering'],
-        whyChoose: ['State-of-the-art computer labs', 'Industry partnerships with tech giants', 'High employability rate'],
         contact: {
             email: 'cs@knust.edu.gh',
             phone: '+233 3220 12345',
@@ -140,7 +138,6 @@ export const DEPARTMENTS: Department[] = [
         ],
         vision: 'To advance chemical sciences through innovative research and quality education.',
         researchAreas: ['Organic Synthesis', 'Analytical Chemistry', 'Environmental Chemistry', 'Pharmaceutical Chemistry'],
-        whyChoose: ['State-of-the-art facilities', 'Experienced faculty', 'Industry partnerships', 'Research opportunities'],
         contact: {
             email: 'chemistry@knust.edu.gh',
             phone: '+233 3220 54321',
@@ -202,7 +199,6 @@ export const DEPARTMENTS: Department[] = [
         ],
         vision: 'To unravel the mysteries of the universe through rigorous inquiry and experimentation.',
         researchAreas: ['Quantum Mechanics', 'Astrophysics', 'Solid State Physics', 'Geophysics'],
-        whyChoose: ['World-class observatories', 'Leading research groups', 'International collaborations'],
         contact: {
             email: 'physics@knust.edu.gh',
             phone: '+233 3220 98765',
@@ -264,7 +260,6 @@ export const DEPARTMENTS: Department[] = [
         ],
         vision: 'To be a center of excellence in mathematical sciences and applications.',
         researchAreas: ['Applied Mathematics', 'Pure Mathematics', 'Statistics', 'Computational Modeling'],
-        whyChoose: ['Strong analytical training', 'Versatile career paths', 'Expert faculty'],
         contact: {
             email: 'math@knust.edu.gh',
             phone: '+233 3220 11223',
@@ -320,7 +315,6 @@ export const DEPARTMENTS: Department[] = [
         ],
         vision: 'To reveal the molecular mechanisms of life and improve health and sustainability.',
         researchAreas: ['Molecular Biology', 'Clinical Biochemistry', 'Biotechnology', 'Drug Discovery'],
-        whyChoose: ['Advanced laboratories', 'Interdisciplinary approach', 'Focus on health solutions'],
         contact: {
             email: 'biochem@knust.edu.gh',
             phone: '+233 3220 33445',
@@ -376,7 +370,6 @@ export const DEPARTMENTS: Department[] = [
         ],
         vision: 'To advance understanding of the living world and conserve biodiversity.',
         researchAreas: ['Ecology', 'Microbiology', 'Zoology', 'Botany'],
-        whyChoose: ['Field work opportunities', 'Diverse specialization options', 'Conservation focus'],
         contact: {
             email: 'biology@knust.edu.gh',
             phone: '+233 3220 55667',
