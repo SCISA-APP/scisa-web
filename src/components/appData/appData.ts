@@ -67,3 +67,63 @@
       a: "Once you're on the waitlist, you'll receive updates and opportunities to participate in beta testing and provide input for new features.",
     },
   ];
+
+
+  export const articles = [
+    {
+      tag: "Awards",
+      img: "src/assets/images/awards.jpg",
+      title: "International Conference on Applied Mathematics Hosted at KNUST",
+      date: "September 20, 2025",
+      desc: "Over 200 mathematicians from 30 countries gathered to discuss advances in applied mathematics and computational methods."
+    },
+    {
+      tag: "Student Achievements",
+      img: "src/assets/images/achievement.jpg",
+      title: "Chemistry Students Win Regional Science Competition",
+      date: "September 15, 2025",
+      desc: "A team of undergraduate chemistry students took first place in the West African Science Olympiad."
+    },
+    {
+      tag:"Technology",
+      img: "src/assets/images/technology.jpg",
+      title: "SCISA Multipurpose App Set to Launch Next Semester",
+      date: "September 25, 2025",
+      desc: "The Science Students Association announces the upcoming launch of their innovative student platform."
+    },
+    {
+      tag:"Events",
+      img: "src/assets/images/events.jpg",
+      title: "International Conference on Applied Mathematics Hosted at KNUST",
+      date: "September 20, 2025",
+      desc: "Over 200 mathematicians from 30 countries gathered to discuss advances in applied mathematics and computational methods."
+    },
+    {
+      tag:"Facilities",
+      img: "src/assets/images/facilities.jpg",
+      title: "New State-of-the-Art Computer Science Lab Opens on Campus",
+      date: "September 25, 2025",
+      desc: "The new facility features cutting-edge technology and will support research in AI, machine learning, and cybersecurity."
+    },
+    {
+      tag:"Academics",
+      img: "src/assets/images/academics.jpg",
+      title: "New PhD Program in Data Science Now Accepting Applications",
+      date: "September 10, 2025",
+      desc: "The College of Science introduces a new doctoral program focusing on big data analytics and artificial intelligence."
+    },
+    {
+      tag:"Research",
+      img: "src/assets/images/research.jpg",
+      title: "Physics Department Receives Grant for Quantum Computing Research",
+      date: "September 5, 2025",
+      desc: "A $2 million grant will fund cutting-edge research into quantum computing applications."
+    },
+    {
+      tag:"Alumni",
+      img: "src/assets/images/alumni.jpg",
+      title: "Alumni Spotlight: Dr. Kwame Asante Named WHO Chief Scientist",
+      date: "August 30, 2025",
+      desc: "Biochemistry alumnus Dr. Kwame Asante has been appointed Chief Scientist at the World Health Organization."
+    },
+  ]
