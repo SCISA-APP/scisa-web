@@ -1,15 +1,14 @@
-// src/pages/management/articles/api.ts
 import { supabase } from "../lib/supabaseClient";
 import type { Article, ArticleInsert } from "../types/Articles";
 
 export const fetchArticles = async (): Promise<Article[]> => {
   const { data, error } = await supabase
-    .from<"articles", any>("articles")
+    .from("articles")
     .select("*")
     .order("created_at", { ascending: false });
 
   if (error) throw error;
-  return (data as unknown as Article[]) || [];
+  return (data as Article[]) || [];
 };
 
 export const uploadImage = async (file: File): Promise<string> => {
@@ -22,7 +21,12 @@ export const uploadImage = async (file: File): Promise<string> => {
   return data?.publicUrl || "";
 };
 
-export const addArticle = async (article: ArticleInsert) => {
-  const { error } = await supabase.from<"articles", any>("articles").insert([article]);
+export const addArticle = async (article: ArticleInsert): Promise<void> => {
+  const { error } = await supabase.from("articles").insert([article]);
+  if (error) throw error;
+};
+
+export const deleteArticle = async (id: number): Promise<void> => {
+  const { error } = await supabase.from("articles").delete().eq("id", id);
   if (error) throw error;
 };
