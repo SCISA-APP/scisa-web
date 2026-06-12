@@ -14,16 +14,10 @@ export const mainNavigation: NavItem[] = [
     href: "/",
     description: "Welcome to SCISA College"
   },
- 
   {
     name: "Departments",
     href: "/departments",
     description: "Explore our academic departments"
-  },
-   {
-    name: "News",
-    href: "/news", 
-    description: "Latest news and updates"
   },
   {
     name: "Executives",
@@ -35,13 +29,7 @@ export const mainNavigation: NavItem[] = [
     href: "/app",
     description: "Get the SCISA Multipurpose App"
   },
- 
   {
-    name: "Management",
-    href: "/management", 
-    description: "Latest news and updates"
-  },
-   {
     name: "About",
     href: "/about",
     description: "Learn about our college"

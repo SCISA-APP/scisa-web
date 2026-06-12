@@ -10,6 +10,7 @@ import Purchases from "./Purchases";
 import Counselors from "./Counselors";
 import Reports from "./Reports";
 import Executives from "./Executives";
+import Internship from "./internship";
 
 
 function Management() {
@@ -24,6 +25,7 @@ function Management() {
         <Route path="counselors" element={<Counselors />} />
         <Route path="reports" element={<Reports />} />
         <Route path="executives" element={<Executives/>} />
+        <Route path="internship" element={<Internship />} />
       </Routes>
     </ManagementLayout>
   );

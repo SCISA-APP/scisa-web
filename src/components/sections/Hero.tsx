@@ -1,4 +1,3 @@
-import homeImg from '../../assets/images/home_img.jpg';
 import { Button } from '../ui';
 
 const Hero = () => {

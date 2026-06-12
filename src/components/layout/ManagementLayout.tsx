@@ -10,7 +10,8 @@ import {
   Users, 
   AlertTriangle,
   LogOut,
-  User as UserIcon
+  User as UserIcon,
+  Briefcase,
 } from "lucide-react";
 
 interface Props {
@@ -24,10 +25,11 @@ export default function ManagementLayout({ children }: Props) {
   const menuItems = [
     { name: "Articles / Events", path: "/management/articles", icon: FileText },
     { name: "SCISA Bursary", path: "/management/bursary", icon: GraduationCap },
-     { name: "Executive Display", path: "/management/executives", icon: FileText },
+    { name: "SCISA Executives", path: "/management/executives", icon: Users },
+    { name: "Internship & Jobs", path: "/management/internship", icon: Briefcase },
     { name: "Counselors", path: "/management/counselors", icon: Users },
     { name: "Reported Concerns", path: "/management/reports", icon: AlertTriangle },
-        { name: "Applied Sellers", path: "/management/sellers", icon: Store },
+    { name: "Applied Sellers", path: "/management/sellers", icon: Store },
     { name: "Purchases", path: "/management/purchases", icon: ShoppingBag },
   ];
 

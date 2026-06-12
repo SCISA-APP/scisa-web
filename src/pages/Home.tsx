@@ -6,6 +6,7 @@ import Departments from "../components/sections/Departments";
 import News from "../components/sections/News";
 import Executives from "../components/sections/Executives";
 import CTA from "../components/sections/CTA";
+import InternshipPromo from "../components/sections/InternshipPromo";
 
 function Home() {
   return (
@@ -13,8 +14,10 @@ function Home() {
       <Hero />
       <Stats />
       <Excellence />
+      
+      <AppPromo />
+      <InternshipPromo />
       <Departments />
-      <AppPromo />   
       <Executives />
       <News />
       <CTA />
