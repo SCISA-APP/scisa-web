@@ -24,10 +24,11 @@ export default function ManagementLayout({ children }: Props) {
   const menuItems = [
     { name: "Articles / Events", path: "/management/articles", icon: FileText },
     { name: "SCISA Bursary", path: "/management/bursary", icon: GraduationCap },
-    { name: "Applied Sellers", path: "/management/sellers", icon: Store },
-    { name: "Purchases", path: "/management/purchases", icon: ShoppingBag },
-    { name: "Student Counselors", path: "/management/counselors", icon: Users },
+     { name: "Executive Display", path: "/management/executives", icon: FileText },
+    { name: "Counselors", path: "/management/counselors", icon: Users },
     { name: "Reported Concerns", path: "/management/reports", icon: AlertTriangle },
+        { name: "Applied Sellers", path: "/management/sellers", icon: Store },
+    { name: "Purchases", path: "/management/purchases", icon: ShoppingBag },
   ];
 
   const handleLogout = async () => {

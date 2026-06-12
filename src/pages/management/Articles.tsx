@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import ArticleForm from "../../components/forms/ArticleForm";
 import ArticleCard from "../../components/cards/ArticleCard";
-import { fetchArticles, deleteArticle } from "../../api/article";
+import { fetchArticles, deleteArticle, fetchNotifications } from "../../api/article";
 import type { Article } from "../../types/Articles";
-import { Plus, Search, AlertCircle, Loader2 } from "lucide-react";
+import type { Notification } from "../../types/Notifications";
+import { Plus, Search, AlertCircle, Loader2, Bell } from "lucide-react";
+import NotificationForm from "../../components/forms/NotificationForm";
 
 export default function Articles() {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [showNotifForm, setShowNotifForm] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,6 +28,15 @@ export default function Articles() {
     }
   };
 
+  const loadNotifications = async () => {
+    try {
+      const data = await fetchNotifications();
+      setNotifications(data);
+    } catch (error) {
+      console.error("Error fetching notifications:", error);
+    }
+  };
+
   const handleDelete = async (id: number) => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
     try {
@@ -37,10 +50,11 @@ export default function Articles() {
 
   useEffect(() => {
     loadArticles();
+    loadNotifications();
   }, []);
 
   const filteredArticles = articles.filter((a) => {
-    const matchesSearch = a.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    const matchesSearch = a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           a.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesType = filterType === "all" || a.type === filterType;
     return matchesSearch && matchesType;
@@ -57,33 +71,80 @@ export default function Articles() {
           </p>
         </div>
 
-        {!showForm && (
+        <div className="flex gap-3 shrink-0">
+          {!showForm && (
+            <button
+              onClick={() => setShowForm(true)}
+              className="flex items-center justify-center space-x-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition shadow-md shadow-blue-500/10 text-sm"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Add Article / Event</span>
+            </button>
+          )}
+
           <button
-            onClick={() => setShowForm(true)}
-            className="flex items-center justify-center space-x-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition shadow-md shadow-blue-500/10 shrink-0 text-sm"
+            onClick={() => setShowNotifForm(true)}
+            className="flex items-center justify-center space-x-2 px-4 py-2.5 bg-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold transition shadow-md text-sm"
           >
-            <Plus className="w-4 h-4" />
-            <span>Add Article / Event</span>
+            <Bell className="w-4 h-4" />
+            <span>Send Notification</span>
           </button>
-        )}
+        </div>
       </div>
 
-      {/* Form Container */}
+      {/* Form Containers */}
       {showForm && (
         <div className="animate-fadeIn">
           <ArticleForm
             onSuccess={() => {
               setShowForm(false);
               loadArticles();
+              loadNotifications();
             }}
             onCancel={() => setShowForm(false)}
           />
         </div>
       )}
 
+      {showNotifForm && (
+        <div className="animate-fadeIn">
+          <NotificationForm
+            onSuccess={() => {
+              setShowNotifForm(false);
+              loadNotifications();
+            }}
+            onCancel={() => setShowNotifForm(false)}
+          />
+        </div>
+      )}
+
+      {/* Recent Notifications */}
+      <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+        <div className="flex items-center gap-2 mb-3">
+          <Bell className="w-4 h-4 text-blue-600" />
+          <h3 className="text-sm font-bold text-slate-800">Recent Notifications</h3>
+        </div>
+        {notifications.length === 0 ? (
+          <p className="text-sm text-slate-500">No notifications sent yet.</p>
+        ) : (
+          <ul className="space-y-2">
+            {notifications.map((n) => (
+              <li key={n.id} className="flex items-start justify-between text-sm border-b border-slate-100 last:border-0 pb-2 last:pb-0">
+                <div>
+                  <p className="font-semibold text-slate-800">{n.title}</p>
+                  <p className="text-slate-500 text-xs mt-0.5">{n.message}</p>
+                </div>
+                <span className="text-xs text-slate-400 shrink-0 ml-3">
+                  {new Date(n.created_at).toLocaleDateString()}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
       {/* Filters & Search Toolbar */}
       <div className="flex flex-col md:flex-row gap-4 items-center justify-between bg-white p-4 border border-slate-200 rounded-2xl shadow-sm">
-        {/* Search */}
         <div className="relative w-full md:max-w-xs">
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
           <input
@@ -95,7 +156,6 @@ export default function Articles() {
           />
         </div>
 
-        {/* Tab-like filter */}
         <div className="flex bg-slate-100/80 border border-slate-200 p-1 rounded-xl w-full md:w-auto">
           {(["all", "article", "event"] as const).map((type) => (
             <button
@@ -126,7 +186,7 @@ export default function Articles() {
           </div>
           <h3 className="text-lg font-bold text-slate-850 mb-1">No items found</h3>
           <p className="text-slate-500 text-sm max-w-sm">
-            {searchQuery 
+            {searchQuery
               ? "We couldn't find any articles matching your search. Try adjusting filters."
               : "No articles or events have been created yet. Click 'Add Article / Event' to begin."}
           </p>

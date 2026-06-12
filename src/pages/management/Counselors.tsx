@@ -114,7 +114,7 @@ export default function Counselors() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800 tracking-tight">Student Counselors</h1>
           <p className="text-slate-500 text-sm mt-1">
-            Manage student counselors featured in the mental health support section of the mobile app.
+            Manage counselors and student counselors featured in the mental health support section of the mobile app.
           </p>
         </div>
 
