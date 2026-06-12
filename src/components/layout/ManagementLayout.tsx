@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import logo from "../../assets/images/logo.jpeg";
+import logo from "/logo.jpeg";
 import { 
   FileText, 
   GraduationCap, 

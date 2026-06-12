@@ -47,7 +47,7 @@ const AppPromo = () => {
             ))}
           </ul>
           
-          <Button variant="primary" href="/app" className="px-8 py-4 text-lg shadow-lg shadow-primary/20">
+          <Button variant="primary" href="/app" className="px-8 py-4 text-lg shadow-lg shadow-primary/20 rounded-lg">
             Learn More & Join Waitlist
           </Button>
         </div>

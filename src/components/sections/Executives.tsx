@@ -1,9 +1,9 @@
 import { ExecutiveCard, SectionTitle, Button } from '../ui';
 
 const members = [
-  { image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=300&q=80', name: 'Kofi Mensah', title: 'President' },
-  { image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=80', name: 'Akua Boatemaa', title: 'Vice President' },
-  { image: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&q=80', name: 'Kwame Owusu', title: 'Treasurer' },
+  { image: "/president.JPG", name: 'Nana Agyekum Boateng', title: 'President' },
+  { image: "/vp.jpeg", name: 'Derrick Kello Junior', title: 'Vice President' },
+  { image: "/gensec.JPG", name: 'Lily Tugbah', title: 'General Secretaty' },
 ];
 
 const Executives = () => {
@@ -16,11 +16,11 @@ const Executives = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10 justify-items-center">
           {members.map((m) => (
-            <ExecutiveCard key={m.name} {...m} />
+            <ExecutiveCard key={m.name} image={m.image} name={m.name}  title={m.title}/>
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button variant="primary" href="/executives" showArrow>
+          <Button variant="primary" href="/executives" className='rounded-lg' showArrow>
             View All Executives
           </Button>
         </div>

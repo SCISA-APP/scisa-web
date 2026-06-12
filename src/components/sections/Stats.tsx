@@ -1,7 +1,7 @@
 const items = [
-  { value: '6+', label: 'Departments' },
-  { value: '50+', label: 'Faculty Members' },
-  { value: '3k+', label: 'Students' },
+  { value: '10+', label: 'Departments' },
+  { value: '2', label: 'Faculties' },
+  { value: '15k+', label: 'Students' },
   { value: '120+', label: 'Publications / yr' },
 ];
 

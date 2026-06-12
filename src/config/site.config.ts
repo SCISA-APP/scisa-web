@@ -2,7 +2,7 @@
 // Global configuration for the college portfolio
 
 export const siteConfig = {
-  name: "College of Science",
+  name: "Science Students Association",
   college: "KNUST",
   description: "The College of Science at KNUST - Ghana's premier institution for scientific excellence, innovation, and discovery.",
   url: "https://scisa-college.edu", // Update with actual domain

@@ -45,7 +45,7 @@ const Departments = () => {
               centered={false}
             />
           </div>
-          <Button variant="secondary" href="/departments" className="hidden md:flex">
+          <Button variant="secondary" href="/departments" className="hidden md:flex rounded-lg">
             View All Departments
           </Button>
         </div>

@@ -64,11 +64,11 @@ function ExecutivesPage() {
   return (
     <main className="flex-1 ">
       <div className="relative w-full h-[640px] md:h-[720px] mb-20">
-        <img
-          src={scisaAppImg}
-          alt="SCISA App"
-          className="w-full h-full object-cover"
-        />
+       <img
+  src="/execs.JPG"
+  alt="KNUST Campus"
+  className="w-full h-full object-cover object-[center_15%]"
+/>
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="absolute top-1/2 -translate-y-1/2 left-6 md:left-16 text-white ">

@@ -43,10 +43,10 @@ const Excellence = () => {
             </div>
 
             <div className="mt-10 flex gap-4">
-              <Button variant="primary" href="/about" showArrow className="px-8 py-4 text-base">
+              <Button variant="primary" href="/about" showArrow className="px-8 py-4 text-base rounded-xl">
                 Read More About Us
               </Button>
-              <Button variant="secondary" href="/research" className="px-8 py-4 text-base">
+              <Button variant="secondary" href="/research" className="px-8 py-4 text-base rounded-xl">
                 Our Research
               </Button>
             </div>

@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={homeImg} 
+          src={"/college.JPG"} 
           alt="KNUST Campus" 
           className="w-full h-full object-cover"
         />
@@ -32,10 +32,10 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-5">
-            <Button variant="primary" href="/about" className="px-8 py-4 text-lg">
+            <Button variant="primary" href="/about" className="px-8 py-4 text-lg rounded-xl">
               Explore Departments
             </Button>
-            <Button variant="secondary" href="/app" className="px-8 py-4 text-lg bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white">
+            <Button variant="secondary" href="/app" className="px-8 py-4 text-lg bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white rounded-lg">
               Join the Waitlist
             </Button>
           </div>

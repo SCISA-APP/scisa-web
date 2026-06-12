@@ -36,14 +36,18 @@ export const Header = () => {
     <header className={headerClass}>
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
+        <div className="flex items-center gap-3">
+
+        <img src="/logo.jpeg" className='w-10 h-10 rounded-full'/>
         <NavLink to="/" className="flex flex-col gap-0 group">
-          <h1 className={`text-lg md:text-xl font-bold font-sans leading-tight transition-colors ${logoClass}`}>
+          <h1 className={`text-lg md:text-sm font-bold font-sans leading-tight transition-colors ${logoClass}`}>
             {siteConfig.name}
           </h1>
           <p className={`text-[10px] uppercase tracking-widest font-medium opacity-80 transition-colors ${textClass}`}>
             {siteConfig.college}
           </p>
         </NavLink>
+        </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
@@ -72,7 +76,7 @@ export const Header = () => {
           <Button 
             href="/app" 
             variant={scrolled || !isHome ? 'primary' : 'secondary'}
-            className={!scrolled && isHome ? 'bg-white text-primary hover:bg-gray-100 border-none' : ''}
+            className={!scrolled && isHome ? 'bg-white text-primary hover:bg-gray-100 border-none rounded-lg' : 'rounded-xl'}
           >
             Join Waitlist
           </Button>
