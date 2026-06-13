@@ -18,7 +18,7 @@ const Departments = () => {
           >
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Academic Departments</h1>
             <p className="text-xl text-neutral-300 max-w-2xl font-light leading-relaxed">
-              Six world-class departments committed to excellence in scientific education, 
+              Twelve world-class departments committed to excellence in scientific education,
               groundbreaking research, and preparing the next generation of innovators.
             </p>
           </motion.div>

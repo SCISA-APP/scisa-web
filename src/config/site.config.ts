@@ -9,8 +9,8 @@ export const siteConfig = {
   
   // Contact Information
   contact: {
-    email: "admin@knust.edu.gh",
-    phone: "+233 XXX XXX XXX",
+    email: "thescisa@gmail.com",
+    phone: "+233 5000 99299",
     address: "KNUST, Kumasi, Ghana"
   },
   
